@@ -1,0 +1,1 @@
+<p><a href="/ci/ewp/get_prefs/<?="$uwnetid/$year_q"?>">Return to Teaching Preferences</a></p>

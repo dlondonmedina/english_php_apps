@@ -1,0 +1,12 @@
+<IfModule authz_core_module>
+    Require all denied
+</IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>
+RewriteEngine On
+#RewriteBase /ci/
+# RewriteRule ^(css|includes)/([a-z\.]+)-([0-9]+)\.(css|js)$ $1/$2.$4 [L]
+#RewriteCond %{SCRIPT_FILENAME} !-d
+#RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php/$1 [L]

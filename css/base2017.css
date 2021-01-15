@@ -1,0 +1,805 @@
+/*@import url(/engl/styles/bootstrap.min.css);
+@import url(/engl/styles/bootstrap-theme.min.css);
+*/
+@import url('https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i');
+
+/* BOOTSTRAP NAV RULES */
+
+/* sets NAV and #inner to similar widths */
+.container-fluid {
+	max-width: 1200px;
+	padding-left: 2em;
+}
+
+/* Keep hamburger menu and menu text aligned horizontally. */
+/* Hamburger is 3 lines, not 4, by removing 1 SPAN from nav.php. */
+.navbar { min-height: 1em; }
+.navbar-brand { height: 1em; }
+
+.navbar-brand,
+.navbar-nav > li > a {
+	padding: .5em 1em;
+}
+
+/*
+	Shift left over space Bootstrap adds for "Home" menu.
+	It's normally in same DIV as hamburger menu.
+*/
+.container-fluid > .navbar-collapse {
+	margin-left: -25px;
+}
+
+
+#navbar,
+.navbar-brand {
+	font-size: 1.25em;
+}
+.navbar-default {
+	border-width: 1px 0;
+	border-top-width: 5px;
+	border-top-color: #b9c4cc;
+	border-radius: 0;
+	box-shadow: 0px 10px 30px 0px #ccc;
+	background: #fff;
+}
+.navbar-default .navbar-toggle {
+	float: left;
+	margin-right: 1em;
+	border-color: transparent;
+	padding: .25em;
+}
+.dropdown-menu a:link,
+.dropdown-menu a:focus,
+.dropdown-menu a:visited {
+	color: #666;
+}
+.dropdown-menu a:hover {
+	color: #000;
+}
+.dropbtn {
+	background-color: #FFFFFF;
+	color: orange;
+	padding: 4px;
+	/*font-size: 16px;*/
+	border: none;
+	cursor: pointer;
+}
+.dropbtn:hover,
+.dropbtn:focus {
+	background-color: #808080;
+}
+.dropdown {
+	position: relative;
+	left: -5px;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.open .dropdown-menu > li:hover,
+.dropdown-menu li:hover > a:hover {
+	background: #777;
+	color: #fff;
+}
+
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {color: #fff;}
+.dropdown-menu > .show {display:block;}
+
+
+/*
+	Hover only when navbar is NOT collapsed.
+*/
+#navbar.navbar-collapse:not(.in) .dropdown-submenu:hover > .dropdown-menu,
+#navbar.navbar-collapse:not(.in) .dropdown:hover > .dropdown-menu {
+	display: block;
+}
+
+/* allows child dropdown-menu to appear beside parent */
+.dropdown-submenu {
+		position: relative;
+}
+.dropdown-submenu .dropdown-menu {
+		top: 0;
+		left: 93%;
+		margin-top: -1px;
+}
+
+
+
+/* GENERAL RULES */
+
+html,
+html *,
+* html * { 
+	margin: 0; 
+	padding: 0; 	
+}
+body {
+	min-width: 175px;
+	font: 77%/1.5 verdana, arial, "Helvetica Neue", helvetica, FreeSans , sans-serif; 
+}
+
+
+/* MAIN LAYOUT */
+
+#masthead {
+	/* relative position needed for #bannerimg--calculates offsets from #masthead */
+	position: relative;
+	height: 125px;
+	padding: 0;
+}
+#bannerimg {
+	z-index: -1;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0;
+	padding:0;
+	width: 500px;
+	height: 100%;
+	/* img from ASweb site */
+	/*background: url(english-header.jpg) 50% 50% no-repeat;*/
+	background:	url(cherry_blossom.jpg) 100% 50% no-repeat;
+}
+
+#masthead .inner {
+	max-width: 1235px;
+	margin: 0 auto;
+	padding-left: 2em;
+}
+#wlogolink {
+	display: block;
+	position: relative;
+	/*margin-left: -2.15em;*/
+	text-indent: -99999px;
+	background: url("data:image/svg+xml,%3Csvg version=\'1.1\' id=\'Layer_1\' xmlns=\'http://www.w3.org/2000/svg\' x=\'0\' y=\'0\' width=\'143\' height=\'96\' viewBox=\'-271 374 68 46\' enable-background=\'new -271 374 68 46\' xml:space=\'preserve\'%3E%3Cg id=\'bothell_stacked_large\'%3E%3Cpath fill=\'%234b2e83\' d=\'M-221.1 374c0 0.5 0 7.8 0 8.3 0.5 0 5.8 0 5.8 0l-6.5 24.2c0 0-7.9-32.1-8-32.5 -0.4 0-7.9 0-8.4 0 -0.1 0.4-8.7 32.5-8.7 32.5l-6-24.2c0 0 5.5 0 6 0 0-0.5 0-7.8 0-8.3 -0.5 0-23.5 0-24.1 0 0 0.5 0 7.8 0 8.3 0.5 0 5.4 0 5.4 0s9.3 37.3 9.4 37.7c0.4 0 12.6 0 13 0 0.1-0.4 6.2-23.7 6.2-23.7s5.8 23.3 5.9 23.7c0.4 0 12.6 0 13 0 0.1-0.4 9.9-37.7 9.9-37.7s4.8 0 5.3 0c0-0.5 0-7.8 0-8.3C-203.6 374-220.5 374-221.1 374z\'/%3E%3C/g%3E%3C/svg%3E")	
+		0 100% no-repeat;
+	width: 143px;
+	height: 125px;
+	background-size: center;
+}
+#wlogolink:hover {
+	/* good match for UW homepage hover : #b7a37a vs #b7a57a */
+	/*filter: hue-rotate(144deg) brightness(282%) grayscale(78%);*/
+
+	/* exact match for AS framework hover : #85754d */
+	filter: hue-rotate(146deg) brightness(202%) grayscale(71%);
+}
+#logo {
+	/*display: inline-block;*/
+	float: left;
+	min-height: 67px;
+	margin-top: 30px;
+	margin-left: 175px;
+	padding-top: 17px;
+}
+#logo img {
+	width: auto;
+	height: auto;
+}
+
+/* main content */
+
+#inner {
+	overflow: auto;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#content { 
+	overflow-y: auto;
+	float: left;
+	/* subtract width of .sidemenu */
+	width: calc(100% - 22em);
+	min-width: 150px;
+	padding: 1em 2em; 
+	line-height: 1.5;
+}
+#content ul,
+#content ol li {
+	margin-left: 1em;
+}
+#content ul {
+	padding-left: 1.33em;
+	/*list-style-image: url(blue-dot_8.svg);*/
+	list-style-image: url("data:image/svg+xml,%3Csvg version=\'1.1\' id=\'Layer_1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' x=\'0px\' y=\'0px\' width=\'8px\' height=\'8px\' viewBox=\'0 0 8 8\' enable-background=\'new 0 0 8 8\' xml:space=\'preserve\'%3E%3Cg%3E%3Ccircle fill=\'%231241a8\' cx=\'4\' cy=\'4\' r=\'4\'/%3E%3C/g%3E%3C/svg%3E");
+}
+#content ul li {
+	margin-bottom: .15em;
+}
+
+/* .sidemenu */
+
+.sidemenu {
+	float: left;
+	width: 19em; 
+	min-width: 100px; 
+	margin: 0;
+	padding: 0 1em 0 .75em;
+	line-height: 1.5em;
+	/*font-size: 1em;*/
+	font-size: 1.115em; /* muli */
+	font-weight: 500;
+	letter-spacing: .025em;
+}
+.sidemenu h2 {
+	background-color: #6d6e71;
+	margin: 3.313em 0 1.438em 0;
+	padding: 0.3em 1em;
+	font-size: 1.143em;
+	text-transform: uppercase;
+	color: white;
+}
+.sidemenu ul {
+	list-style: none;
+}
+.sidemenu ul li {
+	margin: .75em 0;
+	list-style: none;
+}
+.sidemenu ul ul {
+	display:none;
+}
+.sidemenu li {
+	padding-left: 1.25em;
+}
+.sidemenu li.has-children {
+	padding-left: 0;
+}
+.sidemenu li.has-children::before {
+	content: "+ ";
+	font-weight: 900;
+	font-size: 1.25em;
+	color: #bbb;
+}
+.sidemenu li ul li {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+/* footer */
+
+footer {
+	margin: 1em inherit;
+	border-top: 1px solid #ccc;
+	padding-top: 1em;
+	font-weight: 400;
+	letter-spacing: .035em;
+}
+#footcontent {
+	margin: 1em auto;
+	max-width: 1200px;
+}
+#footcontent .ToTop {
+	clear: both;
+	float: left; 
+	/* left margin affects placement of svg graphic */
+	margin: 0 1.5em 0 1.6em;
+}
+#footerimg { 
+	width: 103px;
+	text-align: right; 
+	margin-right: 2em; 
+}
+.footer {
+	font-weight: 400;
+	line-height: 1.45;
+	color: #666;
+}
+.footer-small {
+	font-size: .813em;
+	color: #666;
+}
+
+
+/* webAIM skip-rules */
+
+#skiptocontent a {
+	padding:6px;
+	position: absolute;
+	top:-40px;
+	left:0px;
+	color:white;
+	border-right:1px solid white;
+	border-bottom:1px solid white;
+	border-bottom-right-radius:8px;
+	background:transparent;
+	-webkit-transition: top 1s ease-out, background 1s linear;
+	transition: top 1s ease-out, background 1s linear;
+	z-index: 100;
+}
+#skiptocontent a:focus {
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:#316389;
+	box-shadow: 2px 2px 10px #444;
+	outline:0;	
+	-webkit-transition: top .1s ease-in, background .5s linear;
+	transition: top .1s ease-in, background .5s linear;
+}
+
+
+/* BLOCK elements */
+
+h1, h2, h3, #menu, footer {
+	font-family: 'Muli', verdana, Helvetica, Arial, FreeSans, sans-serif;
+	/*font-family: 'acherus_grotesqueregular', verdana, Helvetica, Arial, FreeSans, sans-serif;*/
+	/*font-family: OpenSansLight, verdana, Helvetica, Arial, FreeSans, sans-serif;*/
+}
+h1 {
+	font-size: 2.25em;
+	font-weight: 300;
+	line-height: 1.66em;
+	color: #0046ad;
+}
+h2,
+h3 {
+	font-weight: 300;
+	color: #4b2e83;
+}
+h2 {
+	margin-top: 2em;
+	margin-bottom: 1em;
+	border-top: 1px solid #ccc;
+	padding-top: .5em;
+	/*font-size: 1.96em;*/
+	font-size: 1.66em;
+	line-height: 1.5em;
+}
+
+h3 { 
+	margin-top: 1em;
+	margin-bottom: .5em;
+	font-size: 1.5em;
+	line-height: 1.2em;
+}
+h4 {
+	font-weight: bold;
+	font-size: 1em;
+}
+p {
+	margin-bottom: .75em;
+}
+h1 + p {
+	margin-top: 2em;
+}
+blockquote { 
+	margin: 2em 20% 2em 5%; 
+	padding-left: 1.75em;
+	font-size: 1.25em;
+	/*background: url(/engl/img/quotes.png) 0 0 no-repeat;*/
+}
+blockquote .qend {
+	padding: 0px 2em 5px 18px;
+	background: url(/engl/img/qend.png) 100% 100% no-repeat;
+}
+div { 
+	margin: 0; 
+	line-height: 1em; 
+}
+
+/* lists */
+
+ul,
+ol { 
+	margin: 1em 0 1em 1em; 
+}
+
+dl,
+dt,
+dd { 
+	margin: 0; 
+	line-height: 1em; 
+}
+
+/* tables */
+
+td h3 { 
+	margin-top: 0;
+	margin-bottom: 0;
+}
+th {
+	font: bold 1em FreeSans, sans-serif;
+	line-height: 1em;
+}
+td { line-height: 1.2em; }
+
+/* minor/optional elements */
+
+#editpage { 
+	/*float: right; */
+}
+
+a.ToTop:link {
+	display: block;
+	float: right;
+	width: 30px;
+	/*background: url(ToTop.svg) 4px 0 no-repeat;*/
+	background: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'38\' height=\'38\' viewBox=\'0 -1 38 38\' %3E%3Ccircle fill=\'%23fff\' stroke-width=\'2\' stroke=\'%23aaa\' cx=\'18\' cy=\'18\' r=\'15\' /%3E%3Cpolyline fill=\'transparent\' stroke=\'%23aaa\' stroke-width=\'2\' points=\'12.005,16.195 16.095,8.487 23.647,12.756 \'/%3E%3Cpath fill=\'transparent\' stroke=\'%23aaa\' stroke-width=\'2\' d=\'M18,28.219c0,0,4-10.494-1.798-18.493\'/%3E%3C/svg%3E") no-repeat;
+	background-size: 33px;
+	/* left/right padding affects text below graphic */
+	padding: 38px 0 1em;
+	line-height: .5em;
+	text-align: center;
+}
+a.ToTop, 
+a.ToTop:link, 
+a.ToTop:visited {
+	color: #999;
+	text-decoration: none;
+}
+a.ToTop:hover {
+	/*background: url(ToTopHover.svg) 4px 0 no-repeat;*/
+	background: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'38\' height=\'38\' viewBox=\'0 0 38 38\' %3E%3Ccircle fill=\'%23d8d8d8\' stroke-width=\'2\' stroke=\'%23d8d8d8\' cx=\'18\' cy=\'22\' r=\'15\' /%3E%3Ccircle fill=\'%23fff\' stroke-width=\'2\' stroke=\'%23777\' cx=\'18\' cy=\'18\' r=\'15\' /%3E%3Cpolyline fill=\'transparent\' stroke=\'%23777\' stroke-width=\'2\' points=\'12.005,16.195 16.095,8.487 23.647,12.756 \'/%3E%3Cpath fill=\'transparent\' stroke=\'%23777\' stroke-width=\'2\' d=\'M18,28.219c0,0,4-10.494-1.798-18.493\'/%3E%3C/svg%3E") no-repeat;
+	background-size: 33px;
+	font-weight: bold;
+	line-height: .4em;
+	color: #666;
+}
+
+/* IN-LINE elements */
+
+img { border: none; }
+
+a:link,
+a:focus,
+a:visited,
+li a:link,
+li a:focus,
+li a:visited {
+	text-decoration: none;
+	color: #0046ad;
+}
+a:hover,
+li a:hover {
+	text-decoration: underline;
+}
+
+/* other */
+
+caption { margin: 0; line-height: 1em; }
+code { font-size: 1em; font-family: monospace} /* to avoid overriding boldness/italicity by using font */
+hr { margin: 0px; 	}
+kbd { font: 1em monospace; }
+samp,
+pre { font: 1em monospace; line-height: 1em; }
+small { font-size: 1em; }
+sub { font-size: 80%; }
+sup { font-size: 80%; }
+textarea { cursor: text; }
+tt { font: 1em monospace; }
+
+/* edit_profile form */
+
+#edit_profile * { font-size: 100%; } /* needed to make padding/margin calculations work */
+#edit_profile br { clear: left; }
+#edit_profile label { 
+	width: 7em; 
+	float: left; 
+	padding: 0 1em 0 0;
+	text-align: right;
+	line-height: 2.25em;
+}
+#edit_profile input,
+#edit_profile select,
+#edit_profile textarea {
+	width: calc(95% - 7em);
+	margin: .25em 0;
+	padding: .15em .25em;
+	font-family: verdana, arial, "Helvetica Neue", helvetica, FreeSans , sans-serif; 
+}
+#edit_profile input[type="submit"] {
+	width: auto;
+	margin-left: calc(7em + 1em);  /* width + padding of LABEL */
+}
+
+/* Jake's teaching preferences styles */
+#get_prefs h2 {
+	clear: left;
+}
+#get_prefs .nodots {
+	overflow: auto;
+}
+#get_prefs li {
+	float: left;
+}
+#get_prefs .nodots li:not(last-child) {
+	margin-right: 2em;
+}
+/* selector below works for #get_prefs and #get_prefs_manage */
+body[id^='get_prefs'] input,
+body[id^='get_prefs'] select,
+body[id^='get_prefs'] textarea {
+	margin: .25em 0;
+	padding: .15em .35em;
+	font-family: verdana, arial, "Helvetica Neue", helvetica, FreeSans , sans-serif; 
+	/* Jake's styles (will want to settle on convention for other pages, too) */
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+body[id^='get_prefs'] input:hover,
+body[id^='get_prefs'] select:hover,
+body[id^='get_prefs'] textarea:hover,
+body[id^='get_prefs'] input:focus,
+body[id^='get_prefs'] select:focus,
+body[id^='get_prefs'] textarea:hover {
+	border: 1px solid #48f;
+}
+body[id^='get_prefs'] textarea {
+	width: 95%;
+	font-size: 1em;
+}
+body[id^='get_prefs'] #ok {
+	padding: .75em 1.25em;
+	color: white;
+	border: none;
+	background-color: #4CAF50;
+}
+body[id^='get_prefs'] #ok:hover,
+body[id^='get_prefs'] #ok:focus {
+	background-color: #45a049;
+}
+#get_prefs_manage table {
+	margin: 1em 0;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	background: #eee;
+	padding: .5em;
+}
+#get_prefs_manage th {
+	padding: .1em .15em;
+}
+#get_prefs_manage th:first-child { /* select only 1st(vertical) column */
+	text-align: right;
+}
+/* prevent submit from becoming narrow */
+#get_prefs_manage input:not([type='submit']) {
+	width: 4em;
+	padding: .1em .35em;
+}
+
+/* CLASSES */
+
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.floatL { 
+	float: left; 
+	margin-right: 1em;
+}
+.floatR { 
+	float: right; 
+	margin-left: 1em;
+}
+/* remove bullet points */
+.nodots,
+#content .nodots {
+	list-style: none;
+}
+
+
+/* COLUMNS */
+
+.cols_40em {
+	column-width: 40em;
+	-moz-column-width:40em; /* Firefox */
+	-webkit-column-width:40em; /* Safari and Chrome */
+}
+.cols_35em {
+	column-width: 35em;
+	-moz-column-width:35em; /* Firefox */
+	-webkit-column-width:35em; /* Safari and Chrome */
+}
+.cols_30em {
+	column-width: 30em;
+	-moz-column-width:30em; /* Firefox */
+-webkit-column-width:30em; /* Safari and Chrome */
+}
+.cols_25em {
+	column-width: 25em;
+	-moz-column-width:25em; /* Firefox */
+	-webkit-column-width:25em; /* Safari and Chrome */
+}
+.cols_20em {
+	column-width: 20em;
+	-moz-column-width:20em; /* Firefox */
+	-webkit-column-width:20em; /* Safari and Chrome */
+}
+.cols_15em {
+	column-width: 15em;
+	-moz-column-width:15em; /* Firefox */
+	-webkit-column-width:15em; /* Safari and Chrome */
+}
+.cols_10em {
+	column-width: 10em;
+	-moz-column-width:10em; /* Firefox */
+	-webkit-column-width:10em; /* Safari and Chrome */
+}
+.cols_2 {
+	-moz-column-count: 2; /*firefox*/
+	-webkit-column-count: 2; /*safari and chrome*/
+	column-count: 2;
+}
+.cols_3 {
+	-moz-column-count: 3; /*firefox*/
+	-webkit-column-count: 3; /*safari and chrome*/
+	column-count: 3;
+}
+
+/* COURSES.PHP */
+
+#contentbox .cdsc {
+	width: 96%;
+	margin: 8px 2% 0 .25%; 
+	font: .9em/1.5 arial, helvetica, FreeSans, sans-serif; 
+}
+ul.booklist {
+	margin-left: 0;
+}
+.booklist > li {
+	margin-left: 2em;
+	text-indent: -2em;
+}
+#contentbox .cdsc + .tip {
+	/* course.php : separate from course entry(s) */
+	margin-top: 2em;
+}
+#contentbox .cdsc h3 {
+	font: bold 1em/1.5 verdana, arial, helvetica, FreeSans, sans-serif;
+}
+#contentbox .cdsc p {
+	font: 1em/1.5 arial, helvetica, FreeSans, sans-serif;
+}
+#contentbox .prereq { margin-left: 5%; }
+
+#mainbox { background: white; }
+#homeimg { margin: 15px 0px 15px 30px; }
+#biobox { background: white; margin: 0px 0px 0px 260px; padding: 2em 1% 1em .5%; }
+#biobox p { margin-bottom: 1em; }
+
+
+/* I.PHP */
+#editpage {
+	margin-top: .5em;
+	padding: .25em .5em;
+}
+
+
+/* NB: decide on general look for forms, to target specific pages less often. */
+
+/* UGRAD/TEACH/EDIT_PAGE.PHP */
+
+#edit_page form div.actions > * {
+	/* buttons at form bottom */
+	margin: 15px 1em 10px;
+	padding: .25em .5em;
+}
+#edit_page #history {
+	width: 100%;
+	margin-top: 1em; 
+	border: 1px solid #d6d6d6; 
+	text-align: left; 
+	empty-cells: show;
+}
+#edit_page #history td {
+	margin: 0 1px 1px 0; 
+	border: 1px solid #ddd; 
+	border-width: 1px 0 0 1px;
+	padding: 5px 0 5px 5px;
+	background: white;
+	vertical-align: top; 
+	font: .9em verdana, arial, helvetica, sans-serif; 
+}
+#edit_page #history th { 
+	font: bold .9em verdana, arial, helvetica, sans-serif; 
+	padding: 5px;
+	border: none;
+	background: #f4f4f4;
+	text-align: center; 
+	vertical-align: middle;
+	color: #888; 
+}
+#edit_page #history tbody td p { 
+	margin: 1px 0; 
+	padding-top: 0;
+	line-height: 1.2em; 
+}
+#edit_page #history tr:nth-child(even) td {
+	background: #f8f8f8;
+}
+#edit_page #history tbody td:nth-child(1) {width: 24%; }
+#edit_page #history tbody td:nth-child(2) {width: 9%; }
+#edit_page #history tbody td:nth-child(3) {width: 100%; }
+
+#edit_page #history {
+	/* Javascript buggy when setting display: block */
+	clear: both;
+	display: none;
+}
+
+
+/* RESPONSIVE RULES */
+
+@media screen and (max-width: 800px) {
+	#masthead {
+		height: 60px;
+		/* img from ASweb site */
+		/*background: url(english-header-mobile.jpg) 50% 0 no-repeat;*/
+		/*background:	url(/engl/ugrad/teach/images/blossoms2small.jpg) 100% 50% no-repeat;*/
+	}
+	#wlogolink {
+		width: 68px;
+		height: 46px;
+		background-size: cover;
+		position: relative;
+		top: 15px;
+	}
+	#logo {
+		float: left;
+		min-height: 34px;
+		margin-top: 0;
+		margin-left: 80px;
+		padding-top: 22px;
+	}
+	#logo img {
+		max-height: 30px;
+		vertical-align: bottom;
+	}
+	.navbar-default {
+		border-top-width: 3px;
+	}
+	#inner {
+		margin: 0;
+	}
+	#content {
+		width: auto;
+		float: none;
+		margin: 1em auto;
+		padding: 0 1em;
+
+	}
+	#menu {
+		clear: left;
+		float: none;
+		margin: 1em 0;
+	}
+}
+
+@media screen and (max-width: 485px) {
+	/* Keep English link visible by fading banner img. */
+	#bannerimg {
+		opacity: .3;
+	}
+}
+
+
+/* PRINT RULES */
+
+@media print {
+	#inner,
+	#content {
+		max-width: 100%;
+		width: 100%;
+		margin: 0;
+	} 
+	nav,
+	#wlogolink,
+	#menu,
+	#editpage,
+	footer { display: none; }
+	#logo { margin: 0; }
+}
+
